@@ -1,3 +1,5 @@
+Here is the updated `README.md` file with the sample login credentials included:
+
 ```markdown
 # Basic To-Do List Application
 
@@ -17,7 +19,7 @@ A simple to-do list application with user authentication, session management, an
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Authentication: Supabase
-- Frontend: React.js
+- Frontend: React.js, TailwindCSS
 - Deployment: Render (backend), Netlify (frontend)
 
 ## Repository Structure
@@ -219,6 +221,13 @@ Response:
   "message": "Todo deleted successfully"
 }
 ```
+
+## Sample Login Credentials
+
+Use the following credentials to log in:
+
+- **Email:** todo-list-app@guerrillamail.org
+- **Password:** qwertyui
 
 ## Deployment
 
