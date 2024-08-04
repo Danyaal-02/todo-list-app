@@ -21,6 +21,7 @@ const AuthForm = ({ formType }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -50,6 +51,8 @@ const AuthForm = ({ formType }) => {
     e.preventDefault();
     if(!validateForm()) return
 
+    setIsSubmitting(true);
+
     if(formType === "login"){
       try {
         const {data}  = await axiosInstance.post("/login" , formData)
@@ -60,6 +63,8 @@ const AuthForm = ({ formType }) => {
         navigate("/")
       } catch (error) {
         toast.error(error.response.data.message)
+      } finally {
+        setIsSubmitting(false);
       }
     }else if(formType === "signup"){
       try {
@@ -70,6 +75,8 @@ const AuthForm = ({ formType }) => {
         navigate("/login")
       } catch (error) {
         toast.error(error.response.data.message)
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -146,8 +153,16 @@ const AuthForm = ({ formType }) => {
         </div>
       )}
       
-      <button type="submit" className="btn w-full bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200">
-        {formType === 'login' ? 'Login' : 'Sign Up'}
+      <button 
+        type="submit" 
+        className="btn w-full bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? (
+          <span className="loading loading-spinner loading-sm"></span>
+        ) : (
+          formType === 'login' ? 'Login' : 'Sign Up'
+        )}
       </button>
     </form>
   );
