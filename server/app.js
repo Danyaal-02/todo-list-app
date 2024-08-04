@@ -15,13 +15,11 @@ const corsOptions = {
   credentials: true,
 };
 
-//built in middlewares
 app.use(express.json({ limit: "16kb" }));
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(cors(corsOptions));
 
-//supabase
 export const supabaseConfig = {
   supabaseUrl: process.env.SUPABASE_URL,
   supabaseKey: process.env.SUPABASE_ANON_KEY,
