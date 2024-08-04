@@ -99,7 +99,7 @@ Request body:
 Response:
 {
   "success": true,
-  "message": "user logged in successfully",
+  "message": "User logged in successfully",
   "user": {
     // User details
   },
@@ -133,7 +133,7 @@ Authorization: Bearer jwt_token_here
 Response:
 {
   "success": true,
-  "message": "sessions retrieved successfully",
+  "message": "Sessions retrieved successfully",
   "sessions": [
     // Array of session objects
   ]
@@ -200,7 +200,7 @@ Request body:
 Response:
 {
   "success": true,
-  "message": "Todo Updated successfully"
+  "message": "Todo updated successfully"
 }
 ```
 
@@ -234,8 +234,8 @@ Use the following credentials to log in:
 
 ## Links
 
-- [Backend Deployment](link-to-render-deployment)
-- [Frontend Deployment](link-to-netlify-deployment)
+- [Backend Deployment](https://todo-list-app-bxqn.onrender.com)
+- [Frontend Deployment](https://todo-list-app-0.netlify.app/)
 
 ## Contributing
 
