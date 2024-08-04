@@ -74,17 +74,14 @@ function getToken(req) {
 function getSessionId(req) {
   let sessionId;
 
-  // Check for Session-ID in custom header
   if (req.headers['session-id']) {
     sessionId = req.headers['session-id'];
   }
 
-  // If not found in headers, check in authorization header
   if (!sessionId && req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
     sessionId = req.headers.authorization.split(" ")[1];
   }
 
-  // If still not found, check in cookies
   if (!sessionId && req.cookies && req.cookies.sessionId) {
     sessionId = req.cookies.sessionId;
   }
