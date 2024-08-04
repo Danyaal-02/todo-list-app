@@ -3,7 +3,11 @@ import User from "../models/user.model.js";
 
 export const authenticate = async (req, res, next) => {
   try {
+    console.log('Headers:', req.headers);
+    console.log('Cookies:', req.cookies);
+    
     const token = getToken(req);
+    console.log('Retrieved token:', token);
     const sessionId = getSessionId(req);
 
     if (!token) {
