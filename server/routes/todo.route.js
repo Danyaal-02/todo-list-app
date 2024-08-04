@@ -9,8 +9,8 @@ import { authenticate } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
-router.get("/", getAllTodos);
-router.post("/", createTodo);
+router.get("/", authenticate, getAllTodos);
+router.post("/", authenticate, createTodo);
 router.put("/:id", authenticate, updateTodo);
 router.delete("/:id", authenticate, deleteTodo);
 
