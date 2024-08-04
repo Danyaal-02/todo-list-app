@@ -1,5 +1,3 @@
-Here is the updated `README.md` file with the sample login credentials included:
-
 ```markdown
 # Basic To-Do List Application
 
